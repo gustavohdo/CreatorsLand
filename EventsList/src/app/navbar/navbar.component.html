@@ -3,22 +3,20 @@
         <div uk-navbar>
 
             <div class="uk-navbar-left">
-
                 <img src="../../assets/logo.png" alt="Logo da CreatorsLand">
-
             </div>
 
             <div class="uk-navbar-center uk-visible@s">
 
                 <ul class="uk-navbar-nav">
-                    <li class="active">
-                        <a class="uk-text-capitalize" href="#">Home</a>
+                    <li routerLink="home" routerLinkActive="active">
+                        <a class="uk-text-capitalize">Home</a>
                     </li>
-                    <li>
-                        <a class="uk-text-capitalize" href="#">Eventos</a>
+                    <li routerLink="eventos" routerLinkActive="active">
+                        <a class="uk-text-capitalize">Eventos</a>
                     </li>
-                    <li>
-                        <a class="uk-text-capitalize" href="#">Comunidade</a>
+                    <li routerLink="comunidade" routerLinkActive="active">
+                        <a class="uk-text-capitalize">Comunidade</a>
                     </li>
                 </ul>
 
@@ -34,13 +32,13 @@
                             <img class="fotoPerfil" src="../../assets/image.png" alt="Foto de perfil">
                         </a>
                         <ul class="uk-nav">
-                            <li class="active">
+                            <li routerLink="" routerLinkActive="active">
                                 <a class="uk-text-capitalize" href="#">Home</a>
                             </li>
-                            <li>
+                            <li routerLink="eventos" routerLinkActive="active">
                                 <a class="uk-text-capitalize" href="#">Eventos</a>
                             </li>
-                            <li>
+                            <li routerLink="comunidade" routerLinkActive="active">
                                 <a class="uk-text-capitalize" href="#">Comunidade</a>
                             </li>
                         </ul>
@@ -57,7 +55,7 @@
                     </a>
                     <button class="uk-button uk-button-secondary uk-text-capitalize">
                         <span> Minha área </span>
-                        <img class="fotoPerfil" src="../../assets/image.png" alt="Foto de perfil">
+                        <img class="profilePhoto" src="../../assets/image.png" alt="Foto de perfil">
                     </button>
                 </div>
             </div>
