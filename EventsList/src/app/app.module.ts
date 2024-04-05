@@ -9,6 +9,7 @@ import { HomeComponent } from './home/home.component';
 import { EventsPageComponent } from './events-page/events-page.component';
 import { ComunityPageComponent } from './comunity-page/comunity-page.component';
 import { EventCardComponent } from './event-card/event-card.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { EventCardComponent } from './event-card/event-card.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

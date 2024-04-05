@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-event-card',
@@ -6,6 +6,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./event-card.component.sass']
 })
 export class EventCardComponent implements OnInit {
+
+  @Input () fullMonth = '';
+  @Input () day = '';
+  @Input () month = '';
+  @Input () startTime = '';
+  @Input () host = '';
+  @Input () endTime = '';
+  @Input () titleEvent = '';
+  @Input () eventCategory = '';
+  @Input () imageAdress = '';
+
 
   constructor() { }
 

@@ -1,2 +1,18 @@
 <app-events-banner></app-events-banner>
-<app-event-card></app-event-card>
+<app-event-card *ngFor="let event of eventList"
+    [fullMonth]="getFullMonth(event.start_datetime)"
+    [day]="getDay(event.start_datetime)"
+    [month]="getMonth(event.start_datetime)"
+    [startTime]="getStartTime(event.start_datetime)"
+    [endTime]="getEndTime(event.end_datetime)"
+    titleEvent="{{event.name}}"
+    host="{{event.organizer}}"
+    eventCategory="{{event.event_type}}"
+    imageAdress="{{event.cover_image}}"
+
+>
+</app-event-card>
+
+<div >
+    
+</div>

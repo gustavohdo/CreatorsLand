@@ -1,34 +1,35 @@
 <div class="uk-overflow-auto">
-    <h1> MÊS DO EVENTO </h1>
+    <h1> {{fullMonth}} </h1>
     <table class="uk-table uk-table-middle uk-table-divider eventCard">
         <tbody>
             <tr>
                 <td class="image">
-                    <div class="uk-inline">
-                        <img class="uk-preserve-width" src="../../assets/event.png" alt="">
+                    <div class="uk-inline imageContainer">
+                        <img class="imageEvent" src="{{imageAdress}}" alt="">
                         <div class="uk-overlay uk-overlay-default uk-position-top date">
-                            <span class="day">10</span>
+                            <span class="day">{{day}}</span>
                             <br>
-                            <span class="month uk-text-uppercase">Nov</span>
+                            <span class="month uk-text-uppercase">{{month}}</span>
                         </div>
                     </div>
                 </td>
                 <td class="uk-table-link">
-                    <span class="time">11AM - 1PM</span>
+                    <span class="time">{{startTime}} - {{endTime}}</span>
                     <p class="title">
-                        Criando cursos com qualidade usando nossas ferramentas
+                        {{titleEvent}}
                     </p>
                     <p class="host">
-                        fdfgghdfhdfhgh
+                        {{host}}
                     </p>
                     <p class="eventType">
-                        <span uk-icon="icon: video-camera"></span>
-                        eventType
+                        <span class="icons" *ngIf="eventCategory === 'online'" uk-icon="icon: video-camera"></span>
+                        <span class="icons" *ngIf="eventCategory === 'presencial'" uk-icon="icon: location"></span>
+                        Evento {{eventCategory}}
                     </p>
                 </td>
                 <td class="uk-text-nowrap uk-align-right confirm">
                     <button class="uk-button uk-button-default uk-text-capitalize">Confirmar Presença</button>
-                    <img class="guests" src="../../assets/guests.png" alt="">
+                    <img class="attendees" src="../../assets/guests.png" alt="">
                 </td>
             </tr>
         </tbody>
