@@ -5,7 +5,7 @@
     <p>Houve um problema ao carregar os eventos, por favor recarregue a página</p>
 </div>
 
-<div class="filter-buttons" *ngIf="showWarning">
+<div class="filter-buttons" *ngIf="!showWarning">
     <button class="uk-button uk-button-default uk-text-capitalize" (click)="filterAllEvents()" [ngClass]="{'active': isFilterActive('filterAllEvents')}">Todos Eventos</button>
     <button class="uk-button uk-button-default uk-text-capitalize" (click)="filterNextEvents()" [ngClass]="{'active': isFilterActive('filterNextEvents')}">Próximos</button>
     <button class="uk-button uk-button-default uk-text-capitalize" (click)="filterPreviousEvents()" [ngClass]="{'active': isFilterActive('filterPreviousEvents')}">Anteriores</button>
