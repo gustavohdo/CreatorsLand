@@ -1,18 +1,31 @@
 <app-events-banner></app-events-banner>
-<app-event-card *ngFor="let event of eventList"
-    [fullMonth]="getFullMonth(event.start_datetime)"
-    [day]="getDay(event.start_datetime)"
-    [month]="getMonth(event.start_datetime)"
-    [startTime]="getStartTime(event.start_datetime)"
-    [endTime]="getEndTime(event.end_datetime)"
-    titleEvent="{{event.name}}"
-    host="{{event.organizer}}"
-    eventCategory="{{event.event_type}}"
-    imageAdress="{{event.cover_image}}"
 
->
-</app-event-card>
-
-<div >
-    
+<div class="uk-alert-danger warning" uk-alert *ngIf="showWarning">
+    <a href class="uk-alert-close" uk-close></a>
+    <p>Houve um problema ao carregar os eventos, por favor recarregue a página</p>
 </div>
+
+<div class="filter-buttons" *ngIf="showWarning">
+    <button class="uk-button uk-button-default uk-text-capitalize" (click)="filterAllEvents()" [ngClass]="{'active': isFilterActive('filterAllEvents')}">Todos Eventos</button>
+    <button class="uk-button uk-button-default uk-text-capitalize" (click)="filterNextEvents()" [ngClass]="{'active': isFilterActive('filterNextEvents')}">Próximos</button>
+    <button class="uk-button uk-button-default uk-text-capitalize" (click)="filterPreviousEvents()" [ngClass]="{'active': isFilterActive('filterPreviousEvents')}">Anteriores</button>
+</div>
+
+<span *ngFor="let month of fullMonths">
+    <ng-container *ngFor="let event of filteredEvents; let i = index">
+        <app-event-card 
+            *ngIf="(showEvent(month, event.start_datetime)) >= 1"
+            [fullMonth]="getFullMonth(event.start_datetime)"
+            [day]="getDay(event.start_datetime)"
+            [month]="getMonth(event.start_datetime)"
+            [startTime]="getStartTime(event.start_datetime)"
+            [endTime]="getEndTime(event.end_datetime)"
+            [showMonth]="countMonth[month] == 1"
+            titleEvent="{{event.name}}"
+            host="{{event.organizer}}"
+            eventCategory="{{event.event_type}}"
+            imageAdress="{{event.cover_image}}"
+        > 
+        </app-event-card>
+    </ng-container>    
+</span>

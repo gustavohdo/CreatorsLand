@@ -16,6 +16,7 @@ export class EventCardComponent implements OnInit {
   @Input () titleEvent = '';
   @Input () eventCategory = '';
   @Input () imageAdress = '';
+  @Input () showMonth: boolean;
 
 
   constructor() { }
